@@ -1,4 +1,4 @@
-🏫 Tienda MLB
+🏫 VIXEL
 
 API-REST construida con Django 5.2 y Python 3.13 para la gestión comercial de la tienda MLB. Este proyecto sigue una arquitectura modular y está preparado para ambientes de desarrollo y producción.
 
