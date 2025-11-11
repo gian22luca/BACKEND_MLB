@@ -1,6 +1,7 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser, AbstractBaseUser
 
-# Create your models here.
+
 class  Usuario(models.Model):
     nombre = models.CharField(max_length=100)
     apellido = models.CharField(max_length=60)
@@ -19,22 +20,12 @@ class Producto(models.Model):
     precio = models.DecimalField(max_digits=10, decimal_places=2)
     stock = models.IntegerField()
     id_producto = models.AutoField(primary_key=True, unique=True)
-    talle = models.CharField(
-        max_length=5,
-        default='M',
-        choices=[
-            ('XS', 'Extra Small'),
-            ('S', 'Small'),
-            ('M', 'Medium'),
-            ('L', 'Large'),
-            ('XL', 'Extra Large'),
-            ('XXL', 'Double Extra Large')
-        ]
-    )
+    
+    
     
 
     def __str__(self):
-        return f"{self.id_producto} {self.nombre} {self.precio} {self.stock} {self.talle}"
+        return f"{self.id_producto} {self.nombre} {self.precio} {self.stock}"
     
 class Pedido(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name='usuarios')
@@ -57,3 +48,8 @@ class Pedido(models.Model):
     def __str__(self):
         return f"{self.id_pedido} {self.usuario} {self.producto} {self.cantidad} {self.fecha_pedido} {self.estado}"
 
+class CustomUser(AbstractUser):
+    phone = models.CharField(max_length=15, blank=True, null=True)
+    address = models.CharField(max_length=255, blank=True, null=True)
+    birth_date = models.DateField(blank=True, null=True)
+    

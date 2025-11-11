@@ -1,0 +1,372 @@
+[DEBUG] 2025-11-10 22:45:22,720 - django.db.backends: (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] 2025-11-10 22:45:22,721 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-10 22:45:22,724 - django.db.backends: (0.003) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] 2025-11-10 22:45:22,727 - django.db.backends: (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] 2025-11-10 22:47:55,861 - django.db.backends: (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] 2025-11-10 22:47:55,862 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-10 22:47:55,863 - django.db.backends: (0.002) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] 2025-11-10 22:47:55,866 - django.db.backends: (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] 2025-11-10 22:48:39,018 - django.db.backends: (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] 2025-11-10 22:48:39,018 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-10 22:48:39,020 - django.db.backends: (0.002) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] 2025-11-10 22:48:39,023 - django.db.backends: (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] 2025-11-10 22:51:22,251 - django.db.backends: (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] 2025-11-10 22:51:22,252 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-10 22:51:22,252 - django.db.backends: (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-11-11 01:51:22.249359' AND `django_session`.`session_key` = 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg') LIMIT 21; args=('2025-11-11 01:51:22.249359', 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg'); alias=default
+[DEBUG] 2025-11-10 22:51:22,253 - django.db.backends: (0.000) SELECT `api_customuser`.`id`, `api_customuser`.`password`, `api_customuser`.`last_login`, `api_customuser`.`is_superuser`, `api_customuser`.`username`, `api_customuser`.`first_name`, `api_customuser`.`last_name`, `api_customuser`.`email`, `api_customuser`.`is_staff`, `api_customuser`.`is_active`, `api_customuser`.`date_joined`, `api_customuser`.`phone`, `api_customuser`.`address`, `api_customuser`.`birth_date` FROM `api_customuser` WHERE `api_customuser`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] 2025-11-10 22:51:22,255 - django.db.backends: (0.001) SELECT COUNT(*) AS `__count` FROM `api_producto`; args=(); alias=default
+[DEBUG] 2025-11-10 22:51:22,256 - django.db.backends: (0.001) SELECT COUNT(*) AS `__count` FROM `api_producto`; args=(); alias=default
+[DEBUG] 2025-11-10 22:51:22,264 - django.db.backends: (0.000) SELECT `api_producto`.`nombre`, `api_producto`.`descripcion`, `api_producto`.`precio`, `api_producto`.`stock`, `api_producto`.`id_producto` FROM `api_producto` ORDER BY `api_producto`.`id_producto` ASC; args=(); alias=default
+[DEBUG] 2025-11-10 22:51:22,291 - django.db.backends: (0.000) SELECT DISTINCT `api_producto`.`precio` AS `precio` FROM `api_producto` ORDER BY 1 ASC; args=(); alias=default
+[DEBUG] 2025-11-10 22:51:22,308 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-10 22:51:22,309 - django.db.backends: (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-11-11 01:51:22.306544' AND `django_session`.`session_key` = 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg') LIMIT 21; args=('2025-11-11 01:51:22.306544', 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg'); alias=default
+[DEBUG] 2025-11-10 22:51:22,310 - django.db.backends: (0.000) SELECT `api_customuser`.`id`, `api_customuser`.`password`, `api_customuser`.`last_login`, `api_customuser`.`is_superuser`, `api_customuser`.`username`, `api_customuser`.`first_name`, `api_customuser`.`last_name`, `api_customuser`.`email`, `api_customuser`.`is_staff`, `api_customuser`.`is_active`, `api_customuser`.`date_joined`, `api_customuser`.`phone`, `api_customuser`.`address`, `api_customuser`.`birth_date` FROM `api_customuser` WHERE `api_customuser`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] 2025-11-10 22:51:47,494 - django.db.backends: (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] 2025-11-10 22:51:47,494 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-10 22:51:47,496 - django.db.backends: (0.001) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] 2025-11-10 22:51:47,499 - django.db.backends: (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] 2025-11-10 22:53:49,755 - django.db.backends: (0.001) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] 2025-11-10 22:53:49,757 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-10 22:53:49,758 - django.db.backends: (0.001) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] 2025-11-10 22:53:49,761 - django.db.backends: (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] 2025-11-10 22:54:03,178 - django.db.backends: (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] 2025-11-10 22:54:03,178 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-10 22:54:03,180 - django.db.backends: (0.001) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] 2025-11-10 22:54:03,182 - django.db.backends: (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] 2025-11-10 23:00:29,782 - django.db.backends: (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] 2025-11-10 23:00:29,782 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-10 23:00:29,784 - django.db.backends: (0.001) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] 2025-11-10 23:00:29,787 - django.db.backends: (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] 2025-11-10 23:02:03,710 - django.db.backends: (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] 2025-11-10 23:02:03,711 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-10 23:02:03,712 - django.db.backends: (0.001) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] 2025-11-10 23:02:03,715 - django.db.backends: (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] 2025-11-10 23:08:18,187 - django.db.backends: (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] 2025-11-10 23:08:18,188 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-10 23:08:18,188 - django.db.backends: (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-11-11 02:08:18.184363' AND `django_session`.`session_key` = 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg') LIMIT 21; args=('2025-11-11 02:08:18.184363', 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg'); alias=default
+[DEBUG] 2025-11-10 23:08:18,189 - django.db.backends: (0.000) SELECT `api_customuser`.`id`, `api_customuser`.`password`, `api_customuser`.`last_login`, `api_customuser`.`is_superuser`, `api_customuser`.`username`, `api_customuser`.`first_name`, `api_customuser`.`last_name`, `api_customuser`.`email`, `api_customuser`.`is_staff`, `api_customuser`.`is_active`, `api_customuser`.`date_joined`, `api_customuser`.`phone`, `api_customuser`.`address`, `api_customuser`.`birth_date` FROM `api_customuser` WHERE `api_customuser`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] 2025-11-10 23:08:18,191 - django.db.backends: (0.001) SELECT COUNT(*) AS `__count` FROM `api_producto`; args=(); alias=default
+[DEBUG] 2025-11-10 23:08:18,192 - django.db.backends: (0.001) SELECT COUNT(*) AS `__count` FROM `api_producto`; args=(); alias=default
+[DEBUG] 2025-11-10 23:08:18,200 - django.db.backends: (0.000) SELECT `api_producto`.`nombre`, `api_producto`.`descripcion`, `api_producto`.`precio`, `api_producto`.`stock`, `api_producto`.`id_producto` FROM `api_producto` ORDER BY `api_producto`.`id_producto` ASC; args=(); alias=default
+[DEBUG] 2025-11-10 23:08:18,228 - django.db.backends: (0.000) SELECT DISTINCT `api_producto`.`precio` AS `precio` FROM `api_producto` ORDER BY 1 ASC; args=(); alias=default
+[DEBUG] 2025-11-10 23:08:18,249 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-10 23:08:18,250 - django.db.backends: (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-11-11 02:08:18.247431' AND `django_session`.`session_key` = 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg') LIMIT 21; args=('2025-11-11 02:08:18.247431', 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg'); alias=default
+[DEBUG] 2025-11-10 23:08:18,251 - django.db.backends: (0.000) SELECT `api_customuser`.`id`, `api_customuser`.`password`, `api_customuser`.`last_login`, `api_customuser`.`is_superuser`, `api_customuser`.`username`, `api_customuser`.`first_name`, `api_customuser`.`last_name`, `api_customuser`.`email`, `api_customuser`.`is_staff`, `api_customuser`.`is_active`, `api_customuser`.`date_joined`, `api_customuser`.`phone`, `api_customuser`.`address`, `api_customuser`.`birth_date` FROM `api_customuser` WHERE `api_customuser`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] 2025-11-10 23:23:06,813 - django.db.backends: (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] 2025-11-10 23:23:06,814 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-10 23:23:06,814 - django.db.backends: (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-11-11 02:23:06.811250' AND `django_session`.`session_key` = 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg') LIMIT 21; args=('2025-11-11 02:23:06.811250', 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg'); alias=default
+[DEBUG] 2025-11-10 23:23:06,815 - django.db.backends: (0.000) SELECT `api_customuser`.`id`, `api_customuser`.`password`, `api_customuser`.`last_login`, `api_customuser`.`is_superuser`, `api_customuser`.`username`, `api_customuser`.`first_name`, `api_customuser`.`last_name`, `api_customuser`.`email`, `api_customuser`.`is_staff`, `api_customuser`.`is_active`, `api_customuser`.`date_joined`, `api_customuser`.`phone`, `api_customuser`.`address`, `api_customuser`.`birth_date` FROM `api_customuser` WHERE `api_customuser`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[WARNING] 2025-11-10 23:23:06,820 - django.request: Forbidden: /api/productos/
+[WARNING] 2025-11-10 23:23:06,821 - django.server: "GET /api/productos/ HTTP/1.1" 403 5002
+[DEBUG] 2025-11-10 23:23:10,319 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-10 23:23:10,319 - django.db.backends: (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-11-11 02:23:10.317894' AND `django_session`.`session_key` = 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg') LIMIT 21; args=('2025-11-11 02:23:10.317894', 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg'); alias=default
+[DEBUG] 2025-11-10 23:23:10,320 - django.db.backends: (0.000) SELECT `api_customuser`.`id`, `api_customuser`.`password`, `api_customuser`.`last_login`, `api_customuser`.`is_superuser`, `api_customuser`.`username`, `api_customuser`.`first_name`, `api_customuser`.`last_name`, `api_customuser`.`email`, `api_customuser`.`is_staff`, `api_customuser`.`is_active`, `api_customuser`.`date_joined`, `api_customuser`.`phone`, `api_customuser`.`address`, `api_customuser`.`birth_date` FROM `api_customuser` WHERE `api_customuser`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[WARNING] 2025-11-10 23:23:10,322 - django.request: Forbidden: /api/productos/
+[WARNING] 2025-11-10 23:23:10,322 - django.server: "GET /api/productos/ HTTP/1.1" 403 5002
+[DEBUG] 2025-11-10 23:23:36,380 - django.db.backends: (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] 2025-11-10 23:23:36,380 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-10 23:23:36,381 - django.db.backends: (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-11-11 02:23:36.378446' AND `django_session`.`session_key` = 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg') LIMIT 21; args=('2025-11-11 02:23:36.378446', 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg'); alias=default
+[DEBUG] 2025-11-10 23:23:36,382 - django.db.backends: (0.000) SELECT `api_customuser`.`id`, `api_customuser`.`password`, `api_customuser`.`last_login`, `api_customuser`.`is_superuser`, `api_customuser`.`username`, `api_customuser`.`first_name`, `api_customuser`.`last_name`, `api_customuser`.`email`, `api_customuser`.`is_staff`, `api_customuser`.`is_active`, `api_customuser`.`date_joined`, `api_customuser`.`phone`, `api_customuser`.`address`, `api_customuser`.`birth_date` FROM `api_customuser` WHERE `api_customuser`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] 2025-11-10 23:23:36,646 - django.db.backends: (0.001) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] 2025-11-10 23:23:36,647 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-10 23:23:36,648 - django.db.backends: (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-11-11 02:23:36.643660' AND `django_session`.`session_key` = 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg') LIMIT 21; args=('2025-11-11 02:23:36.643660', 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg'); alias=default
+[DEBUG] 2025-11-10 23:23:36,649 - django.db.backends: (0.000) SELECT `api_customuser`.`id`, `api_customuser`.`password`, `api_customuser`.`last_login`, `api_customuser`.`is_superuser`, `api_customuser`.`username`, `api_customuser`.`first_name`, `api_customuser`.`last_name`, `api_customuser`.`email`, `api_customuser`.`is_staff`, `api_customuser`.`is_active`, `api_customuser`.`date_joined`, `api_customuser`.`phone`, `api_customuser`.`address`, `api_customuser`.`birth_date` FROM `api_customuser` WHERE `api_customuser`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] 2025-11-10 23:23:42,610 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-10 23:23:42,611 - django.db.backends: (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-11-11 02:23:42.609221' AND `django_session`.`session_key` = 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg') LIMIT 21; args=('2025-11-11 02:23:42.609221', 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg'); alias=default
+[DEBUG] 2025-11-10 23:23:42,611 - django.db.backends: (0.000) SELECT `api_customuser`.`id`, `api_customuser`.`password`, `api_customuser`.`last_login`, `api_customuser`.`is_superuser`, `api_customuser`.`username`, `api_customuser`.`first_name`, `api_customuser`.`last_name`, `api_customuser`.`email`, `api_customuser`.`is_staff`, `api_customuser`.`is_active`, `api_customuser`.`date_joined`, `api_customuser`.`phone`, `api_customuser`.`address`, `api_customuser`.`birth_date` FROM `api_customuser` WHERE `api_customuser`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] 2025-11-10 23:23:42,612 - django.db.backends: (0.000) SELECT `api_producto`.`nombre`, `api_producto`.`descripcion`, `api_producto`.`precio`, `api_producto`.`stock`, `api_producto`.`id_producto` FROM `api_producto`; args=(); alias=default
+[DEBUG] 2025-11-10 23:26:36,960 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-10 23:26:36,961 - django.db.backends: (0.000) SELECT `api_customuser`.`id`, `api_customuser`.`password`, `api_customuser`.`last_login`, `api_customuser`.`is_superuser`, `api_customuser`.`username`, `api_customuser`.`first_name`, `api_customuser`.`last_name`, `api_customuser`.`email`, `api_customuser`.`is_staff`, `api_customuser`.`is_active`, `api_customuser`.`date_joined`, `api_customuser`.`phone`, `api_customuser`.`address`, `api_customuser`.`birth_date` FROM `api_customuser` WHERE `api_customuser`.`username` = 'string' LIMIT 21; args=('string',); alias=default
+[WARNING] 2025-11-10 23:26:37,263 - django.request: Unauthorized: /api/token/
+[WARNING] 2025-11-10 23:26:37,264 - django.server: "POST /api/token/ HTTP/1.1" 401 85
+[DEBUG] 2025-11-10 23:27:04,986 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-10 23:27:04,987 - django.db.backends: (0.000) SELECT `api_customuser`.`id`, `api_customuser`.`password`, `api_customuser`.`last_login`, `api_customuser`.`is_superuser`, `api_customuser`.`username`, `api_customuser`.`first_name`, `api_customuser`.`last_name`, `api_customuser`.`email`, `api_customuser`.`is_staff`, `api_customuser`.`is_active`, `api_customuser`.`date_joined`, `api_customuser`.`phone`, `api_customuser`.`address`, `api_customuser`.`birth_date` FROM `api_customuser` WHERE `api_customuser`.`username` = 'admin' LIMIT 21; args=('admin',); alias=default
+[DEBUG] 2025-11-10 23:27:27,307 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-10 23:27:27,308 - django.db.backends: (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-11-11 02:27:27.306217' AND `django_session`.`session_key` = 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg') LIMIT 21; args=('2025-11-11 02:27:27.306217', 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg'); alias=default
+[DEBUG] 2025-11-10 23:27:27,309 - django.db.backends: (0.000) SELECT `api_customuser`.`id`, `api_customuser`.`password`, `api_customuser`.`last_login`, `api_customuser`.`is_superuser`, `api_customuser`.`username`, `api_customuser`.`first_name`, `api_customuser`.`last_name`, `api_customuser`.`email`, `api_customuser`.`is_staff`, `api_customuser`.`is_active`, `api_customuser`.`date_joined`, `api_customuser`.`phone`, `api_customuser`.`address`, `api_customuser`.`birth_date` FROM `api_customuser` WHERE `api_customuser`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] 2025-11-10 23:27:27,310 - django.db.backends: (0.000) SELECT `api_producto`.`nombre`, `api_producto`.`descripcion`, `api_producto`.`precio`, `api_producto`.`stock`, `api_producto`.`id_producto` FROM `api_producto` WHERE `api_producto`.`id_producto` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] 2025-11-10 23:29:19,809 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-10 23:29:19,810 - django.db.backends: (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-11-11 02:29:19.807853' AND `django_session`.`session_key` = 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg') LIMIT 21; args=('2025-11-11 02:29:19.807853', 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg'); alias=default
+[DEBUG] 2025-11-10 23:29:19,811 - django.db.backends: (0.000) SELECT `api_customuser`.`id`, `api_customuser`.`password`, `api_customuser`.`last_login`, `api_customuser`.`is_superuser`, `api_customuser`.`username`, `api_customuser`.`first_name`, `api_customuser`.`last_name`, `api_customuser`.`email`, `api_customuser`.`is_staff`, `api_customuser`.`is_active`, `api_customuser`.`date_joined`, `api_customuser`.`phone`, `api_customuser`.`address`, `api_customuser`.`birth_date` FROM `api_customuser` WHERE `api_customuser`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[WARNING] 2025-11-10 23:29:19,812 - django.request: Forbidden: /api/productos/
+[WARNING] 2025-11-10 23:29:19,813 - django.server: "GET /api/productos/ HTTP/1.1" 403 63
+[DEBUG] 2025-11-10 23:29:24,840 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-10 23:29:24,841 - django.db.backends: (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-11-11 02:29:24.838822' AND `django_session`.`session_key` = 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg') LIMIT 21; args=('2025-11-11 02:29:24.838822', 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg'); alias=default
+[DEBUG] 2025-11-10 23:29:24,842 - django.db.backends: (0.000) SELECT `api_customuser`.`id`, `api_customuser`.`password`, `api_customuser`.`last_login`, `api_customuser`.`is_superuser`, `api_customuser`.`username`, `api_customuser`.`first_name`, `api_customuser`.`last_name`, `api_customuser`.`email`, `api_customuser`.`is_staff`, `api_customuser`.`is_active`, `api_customuser`.`date_joined`, `api_customuser`.`phone`, `api_customuser`.`address`, `api_customuser`.`birth_date` FROM `api_customuser` WHERE `api_customuser`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[WARNING] 2025-11-10 23:29:24,843 - django.request: Forbidden: /api/productos/
+[WARNING] 2025-11-10 23:29:24,843 - django.server: "GET /api/productos/ HTTP/1.1" 403 63
+[DEBUG] 2025-11-10 23:29:36,986 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-10 23:29:36,987 - django.db.backends: (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-11-11 02:29:36.985507' AND `django_session`.`session_key` = 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg') LIMIT 21; args=('2025-11-11 02:29:36.985507', 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg'); alias=default
+[DEBUG] 2025-11-10 23:29:36,989 - django.db.backends: (0.000) SELECT `api_customuser`.`id`, `api_customuser`.`password`, `api_customuser`.`last_login`, `api_customuser`.`is_superuser`, `api_customuser`.`username`, `api_customuser`.`first_name`, `api_customuser`.`last_name`, `api_customuser`.`email`, `api_customuser`.`is_staff`, `api_customuser`.`is_active`, `api_customuser`.`date_joined`, `api_customuser`.`phone`, `api_customuser`.`address`, `api_customuser`.`birth_date` FROM `api_customuser` WHERE `api_customuser`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] 2025-11-10 23:29:36,990 - django.db.backends: (0.000) SELECT `api_producto`.`nombre`, `api_producto`.`descripcion`, `api_producto`.`precio`, `api_producto`.`stock`, `api_producto`.`id_producto` FROM `api_producto` WHERE `api_producto`.`id_producto` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] 2025-11-10 23:39:16,642 - django.db.backends: (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] 2025-11-10 23:39:16,642 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-10 23:39:16,644 - django.db.backends: (0.001) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] 2025-11-10 23:39:16,647 - django.db.backends: (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] 2025-11-11 00:00:24,596 - django.db.backends: (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] 2025-11-11 00:00:24,597 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-11 00:00:24,598 - django.db.backends: (0.001) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] 2025-11-11 00:00:24,601 - django.db.backends: (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] 2025-11-11 00:01:18,394 - django.db.backends: (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] 2025-11-11 00:01:18,395 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-11 00:01:18,396 - django.db.backends: (0.001) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] 2025-11-11 00:01:18,398 - django.db.backends: (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] 2025-11-11 00:02:21,590 - django.db.backends: (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] 2025-11-11 00:02:21,590 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-11 00:02:21,591 - django.db.backends: (0.001) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] 2025-11-11 00:02:21,594 - django.db.backends: (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] 2025-11-11 00:05:34,423 - django.db.backends: (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] 2025-11-11 00:05:34,424 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-11 00:05:34,425 - django.db.backends: (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-11-11 03:05:34.421731' AND `django_session`.`session_key` = 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg') LIMIT 21; args=('2025-11-11 03:05:34.421731', 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg'); alias=default
+[DEBUG] 2025-11-11 00:05:34,426 - django.db.backends: (0.000) SELECT `api_customuser`.`id`, `api_customuser`.`password`, `api_customuser`.`last_login`, `api_customuser`.`is_superuser`, `api_customuser`.`username`, `api_customuser`.`first_name`, `api_customuser`.`last_name`, `api_customuser`.`email`, `api_customuser`.`is_staff`, `api_customuser`.`is_active`, `api_customuser`.`date_joined`, `api_customuser`.`phone`, `api_customuser`.`address`, `api_customuser`.`birth_date` FROM `api_customuser` WHERE `api_customuser`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[WARNING] 2025-11-11 00:05:34,428 - django.request: Forbidden: /api/productos/
+[WARNING] 2025-11-11 00:05:34,428 - django.server: "GET /api/productos/ HTTP/1.1" 403 63
+[DEBUG] 2025-11-11 00:05:35,269 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-11 00:05:35,269 - django.db.backends: (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-11-11 03:05:35.267369' AND `django_session`.`session_key` = 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg') LIMIT 21; args=('2025-11-11 03:05:35.267369', 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg'); alias=default
+[DEBUG] 2025-11-11 00:05:35,270 - django.db.backends: (0.000) SELECT `api_customuser`.`id`, `api_customuser`.`password`, `api_customuser`.`last_login`, `api_customuser`.`is_superuser`, `api_customuser`.`username`, `api_customuser`.`first_name`, `api_customuser`.`last_name`, `api_customuser`.`email`, `api_customuser`.`is_staff`, `api_customuser`.`is_active`, `api_customuser`.`date_joined`, `api_customuser`.`phone`, `api_customuser`.`address`, `api_customuser`.`birth_date` FROM `api_customuser` WHERE `api_customuser`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[WARNING] 2025-11-11 00:05:35,271 - django.request: Forbidden: /api/productos/
+[WARNING] 2025-11-11 00:05:35,272 - django.server: "GET /api/productos/ HTTP/1.1" 403 63
+[DEBUG] 2025-11-11 00:05:46,409 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-11 00:05:46,410 - django.db.backends: (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-11-11 03:05:46.408672' AND `django_session`.`session_key` = 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg') LIMIT 21; args=('2025-11-11 03:05:46.408672', 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg'); alias=default
+[DEBUG] 2025-11-11 00:05:46,411 - django.db.backends: (0.000) SELECT `api_customuser`.`id`, `api_customuser`.`password`, `api_customuser`.`last_login`, `api_customuser`.`is_superuser`, `api_customuser`.`username`, `api_customuser`.`first_name`, `api_customuser`.`last_name`, `api_customuser`.`email`, `api_customuser`.`is_staff`, `api_customuser`.`is_active`, `api_customuser`.`date_joined`, `api_customuser`.`phone`, `api_customuser`.`address`, `api_customuser`.`birth_date` FROM `api_customuser` WHERE `api_customuser`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[WARNING] 2025-11-11 00:05:46,412 - django.request: Forbidden: /api/productos/
+[WARNING] 2025-11-11 00:05:46,412 - django.server: "GET /api/productos/ HTTP/1.1" 403 63
+[DEBUG] 2025-11-11 00:05:48,830 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-11 00:05:48,831 - django.db.backends: (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-11-11 03:05:48.828230' AND `django_session`.`session_key` = 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg') LIMIT 21; args=('2025-11-11 03:05:48.828230', 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg'); alias=default
+[DEBUG] 2025-11-11 00:05:48,832 - django.db.backends: (0.000) SELECT `api_customuser`.`id`, `api_customuser`.`password`, `api_customuser`.`last_login`, `api_customuser`.`is_superuser`, `api_customuser`.`username`, `api_customuser`.`first_name`, `api_customuser`.`last_name`, `api_customuser`.`email`, `api_customuser`.`is_staff`, `api_customuser`.`is_active`, `api_customuser`.`date_joined`, `api_customuser`.`phone`, `api_customuser`.`address`, `api_customuser`.`birth_date` FROM `api_customuser` WHERE `api_customuser`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[WARNING] 2025-11-11 00:05:48,832 - django.request: Forbidden: /api/productos/
+[WARNING] 2025-11-11 00:05:48,832 - django.server: "GET /api/productos/ HTTP/1.1" 403 63
+[DEBUG] 2025-11-11 00:06:12,443 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-11 00:06:12,443 - django.db.backends: (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-11-11 03:06:12.441660' AND `django_session`.`session_key` = 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg') LIMIT 21; args=('2025-11-11 03:06:12.441660', 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg'); alias=default
+[DEBUG] 2025-11-11 00:06:12,444 - django.db.backends: (0.000) SELECT `api_customuser`.`id`, `api_customuser`.`password`, `api_customuser`.`last_login`, `api_customuser`.`is_superuser`, `api_customuser`.`username`, `api_customuser`.`first_name`, `api_customuser`.`last_name`, `api_customuser`.`email`, `api_customuser`.`is_staff`, `api_customuser`.`is_active`, `api_customuser`.`date_joined`, `api_customuser`.`phone`, `api_customuser`.`address`, `api_customuser`.`birth_date` FROM `api_customuser` WHERE `api_customuser`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] 2025-11-11 00:06:17,180 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-11 00:06:17,180 - django.db.backends: (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-11-11 03:06:17.178626' AND `django_session`.`session_key` = 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg') LIMIT 21; args=('2025-11-11 03:06:17.178626', 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg'); alias=default
+[DEBUG] 2025-11-11 00:06:17,181 - django.db.backends: (0.000) SELECT `api_customuser`.`id`, `api_customuser`.`password`, `api_customuser`.`last_login`, `api_customuser`.`is_superuser`, `api_customuser`.`username`, `api_customuser`.`first_name`, `api_customuser`.`last_name`, `api_customuser`.`email`, `api_customuser`.`is_staff`, `api_customuser`.`is_active`, `api_customuser`.`date_joined`, `api_customuser`.`phone`, `api_customuser`.`address`, `api_customuser`.`birth_date` FROM `api_customuser` WHERE `api_customuser`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] 2025-11-11 00:06:17,833 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-11 00:06:17,834 - django.db.backends: (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-11-11 03:06:17.831968' AND `django_session`.`session_key` = 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg') LIMIT 21; args=('2025-11-11 03:06:17.831968', 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg'); alias=default
+[DEBUG] 2025-11-11 00:06:17,835 - django.db.backends: (0.000) SELECT `api_customuser`.`id`, `api_customuser`.`password`, `api_customuser`.`last_login`, `api_customuser`.`is_superuser`, `api_customuser`.`username`, `api_customuser`.`first_name`, `api_customuser`.`last_name`, `api_customuser`.`email`, `api_customuser`.`is_staff`, `api_customuser`.`is_active`, `api_customuser`.`date_joined`, `api_customuser`.`phone`, `api_customuser`.`address`, `api_customuser`.`birth_date` FROM `api_customuser` WHERE `api_customuser`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] 2025-11-11 00:06:18,317 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-11 00:06:18,317 - django.db.backends: (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-11-11 03:06:18.315974' AND `django_session`.`session_key` = 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg') LIMIT 21; args=('2025-11-11 03:06:18.315974', 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg'); alias=default
+[DEBUG] 2025-11-11 00:06:18,318 - django.db.backends: (0.000) SELECT `api_customuser`.`id`, `api_customuser`.`password`, `api_customuser`.`last_login`, `api_customuser`.`is_superuser`, `api_customuser`.`username`, `api_customuser`.`first_name`, `api_customuser`.`last_name`, `api_customuser`.`email`, `api_customuser`.`is_staff`, `api_customuser`.`is_active`, `api_customuser`.`date_joined`, `api_customuser`.`phone`, `api_customuser`.`address`, `api_customuser`.`birth_date` FROM `api_customuser` WHERE `api_customuser`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] 2025-11-11 00:06:22,770 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-11 00:06:22,770 - django.db.backends: (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-11-11 03:06:22.768272' AND `django_session`.`session_key` = 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg') LIMIT 21; args=('2025-11-11 03:06:22.768272', 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg'); alias=default
+[DEBUG] 2025-11-11 00:06:22,771 - django.db.backends: (0.000) SELECT `api_customuser`.`id`, `api_customuser`.`password`, `api_customuser`.`last_login`, `api_customuser`.`is_superuser`, `api_customuser`.`username`, `api_customuser`.`first_name`, `api_customuser`.`last_name`, `api_customuser`.`email`, `api_customuser`.`is_staff`, `api_customuser`.`is_active`, `api_customuser`.`date_joined`, `api_customuser`.`phone`, `api_customuser`.`address`, `api_customuser`.`birth_date` FROM `api_customuser` WHERE `api_customuser`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] 2025-11-11 00:06:22,771 - django.db.backends: (0.000) SELECT `api_producto`.`nombre`, `api_producto`.`descripcion`, `api_producto`.`precio`, `api_producto`.`stock`, `api_producto`.`id_producto` FROM `api_producto`; args=(); alias=default
+[DEBUG] 2025-11-11 00:06:23,491 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-11 00:06:23,492 - django.db.backends: (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-11-11 03:06:23.490210' AND `django_session`.`session_key` = 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg') LIMIT 21; args=('2025-11-11 03:06:23.490210', 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg'); alias=default
+[DEBUG] 2025-11-11 00:06:23,493 - django.db.backends: (0.000) SELECT `api_customuser`.`id`, `api_customuser`.`password`, `api_customuser`.`last_login`, `api_customuser`.`is_superuser`, `api_customuser`.`username`, `api_customuser`.`first_name`, `api_customuser`.`last_name`, `api_customuser`.`email`, `api_customuser`.`is_staff`, `api_customuser`.`is_active`, `api_customuser`.`date_joined`, `api_customuser`.`phone`, `api_customuser`.`address`, `api_customuser`.`birth_date` FROM `api_customuser` WHERE `api_customuser`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] 2025-11-11 00:06:23,494 - django.db.backends: (0.000) SELECT `api_producto`.`nombre`, `api_producto`.`descripcion`, `api_producto`.`precio`, `api_producto`.`stock`, `api_producto`.`id_producto` FROM `api_producto`; args=(); alias=default
+[DEBUG] 2025-11-11 00:06:24,251 - django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-11-11 00:06:24,252 - django.db.backends: (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-11-11 03:06:24.250182' AND `django_session`.`session_key` = 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg') LIMIT 21; args=('2025-11-11 03:06:24.250182', 'xduvq0oxvsy9quidu1g0kx7ha0ig3gpg'); alias=default
+[DEBUG] 2025-11-11 00:06:24,253 - django.db.backends: (0.000) SELECT `api_customuser`.`id`, `api_customuser`.`password`, `api_customuser`.`last_login`, `api_customuser`.`is_superuser`, `api_customuser`.`username`, `api_customuser`.`first_name`, `api_customuser`.`last_name`, `api_customuser`.`email`, `api_customuser`.`is_staff`, `api_customuser`.`is_active`, `api_customuser`.`date_joined`, `api_customuser`.`phone`, `api_customuser`.`address`, `api_customuser`.`birth_date` FROM `api_customuser` WHERE `api_customuser`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] 2025-11-11 00:06:24,254 - django.db.backends: (0.000) SELECT `api_producto`.`nombre`, `api_producto`.`descripcion`, `api_producto`.`precio`, `api_producto`.`stock`, `api_producto`.`id_producto` FROM `api_producto`; args=(); alias=default

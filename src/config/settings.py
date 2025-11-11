@@ -25,11 +25,11 @@ load_dotenv(os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
+ENV = os.getenv('ENV', 'production')
+ALLOWED_HOST = os.getenv('ALLOWED_HOSTS', '').split(',')
 
-ALLOWED_HOSTS = []
-
-
+CORS_ALLOWED_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS', '').split(',')
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,12 +39,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework', 
+    'rest_framework',
+    'rest_framework_simplejwt', 
     'drf_yasg',
-    'api' 
+    'api' ,
+    'corsheaders'
 ]
+AUTH_USER_MODEL = 'api.CustomUser'
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -130,7 +134,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-RREST_FRAMEWORK = {
+REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES':[
         'rest_framework.authentication.SessionAuthentication',
         #'rest_framework.authentication.BasicAuthentication',
@@ -140,9 +144,29 @@ RREST_FRAMEWORK = {
         #Restrección para acceder a los endpoint 
         #'rest_framework.permissions.IsAuthenticated',
         #Hace publicos todos los endpoints por defecto
-        'rest_framework.permissions.AllowAny',
-    ]
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+        'DEFAULT_THROTTLE_CLASSES' : [
+            # AnnonRateThrottle es una clase de limitación de velocidad para usuarios anónimos
+            'rest_framework.throttling.AnonRateThrottle' ,
+            # UserRateThrottle es una clase de limitación de velocidad para usuarios autenticados
+            'rest_framework.throttling.UserRateThrottle' ,
+            ],
+        'DEFAULT_THROTTLE_RATES' : {
+            'anon': '5/minute' , # usuarios anónimos: 10 solicitudes por minuto
+            'user': '10/hour' , # usuarios autenticados: 100 por hora
+            }
+
 }
+
+#CONFIGURACION JWT-TOKEN
+from datetime import timedelta
+
+SIMPLE_JWT = {
+    #TOKEN DURE 30 minutos
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30), #'00:30:00
+}
+
 
 #CONFIGURACION DE SWAGGER
 SWAGGER_SETTINGS = {
@@ -156,3 +180,63 @@ SWAGGER_SETTINGS = {
     },
     'USE_SESSION_AUTH':False, #Evitar autenticación por basic y por session.
 }
+
+###### LOGGING CONFIGURATION ######
+
+
+#Indico directorio de logs
+LOG_DIR = BASE_DIR.parent / 'logs'
+#En caso de que no exista lo crea
+LOG_DIR.mkdir(exist_ok=True)
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,  # Permite usar los loggers de Django
+    'formatters':{
+        'simple': {'format':"[%(levelname)s] %(name)s: %(message)s"},
+        'avanzado': {'format':"[%(levelname)s] %(asctime)s - %(name)s: %(message)s"},
+        # "json": {
+        #     "()" : "pythonjsonlogger.jsonlogger.JsonFormatter",
+        #     "fmt": "%(asctime)s %(levelname)s %(name)s %(message)s "
+        #            "%(pathname)s:%(lineno)d %(process)d %(threadName)s"
+        # },
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',  # muestra los logs en la consola
+            'formatter':'simple'
+        },
+        'file': {
+            'class': 'logging.FileHandler', #guardar los logs en archivos
+            #'filename': os.path.join(BASE_DIR, 'aude_academy_debug.log'),  # guarda en un archivo
+            'filename': LOG_DIR / 'vixel_debug.log',
+            'formatter':'avanzado'
+        },
+        'file_db':{
+            'class':'logging.FileHandler',
+            #'filename': os.path.join(BASE_DIR, 'aude_academy_log_db.log'),  # guarda en un archivo
+            'filename': LOG_DIR / 'db_debug.log',
+            'formatter':'avanzado'
+        }
+    },
+    'loggers': {
+        'api_vixel': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',  # nivel mínimo a registrar
+            'propagate': True,
+        },
+        #Logger por defecto de django que registra todo lo que pasa en la app
+        'django':{
+            'handlers':['console','file'],
+            'level': 'WARNING',
+        },
+        #Logger por defecto de django para guardar trazabilidad de base de datos
+        'django.db.backends':{
+            'handlers':['file_db'],
+            'level':'DEBUG',
+            'propagate': True
+        }
+    },
+}
+ 
+

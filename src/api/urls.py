@@ -1,6 +1,11 @@
 from django.urls import path
 from . import views
- 
+from rest_framework.routers import DefaultRouter
+
+router = DefaultRouter()
+router.register(r'productoView', views.ProductoViewSet, basename='producto')
+
+
 urlpatterns = [
     path('', views.inicio , name='inicio' ),
     path('info/', views.api_info),
@@ -12,4 +17,5 @@ urlpatterns = [
     path('pedidos/<int:pk>/', views.PedidoDetalleAPIView.as_view()),
  
 ]
- 
+
+urlpatterns += router.urls

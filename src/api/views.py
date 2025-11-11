@@ -1,14 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse , JsonResponse
 from rest_framework.views import APIView
-from .models import Usuario, Producto, Pedido
+from .models import Usuario, Producto, Pedido, CustomUser
 from .serializers import UsuarioSerializer, ProductoSerializer, PedidoSerializer
 from rest_framework.response import Response
 from django.db.models.deletion import RestrictedError
 from rest_framework import status
 from django.db.models import Q
 #Permisos
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAdminUser
 from utils.permission import TienePermisoModelo
@@ -19,25 +19,52 @@ from utils.pagination import CustomPagination
 from drf_yasg.utils import swagger_auto_schema
 from drf_yasg.openapi import Response as OpenAPIResponse
 
+from rest_framework_simplejwt.views import TokenObtainPairView
+from .serializers import CustomTokenObtainPairSerializer, ProductoSerializer
+from rest_framework.viewsets import ModelViewSet
+import logging
+
+logger = logging.getLogger('api_vixel')
+
+class CustomTokenObtainPairView(TokenObtainPairView):
+    serializer_class = CustomTokenObtainPairSerializer
+
+
+
+
 # Create your views here.
 def inicio(request):
-    mensaje = "<h1>¡Bienvenido a la tienda de MLB!</h1>"
+    mensaje = "<h1>¡Bienvenido a Vixel!</h1>"
     return HttpResponse(mensaje)
 
 @api_view(['GET'])
-@permission_classes([IsAuthenticatedOrReadOnly])
+@permission_classes([IsAuthenticated])
 def api_info(request):
     """
-        Información general de la API de tienda de MLB.
+        Información general de la API de Vixel.
     """
     response = {
-        "message":"Bienvenido a la API de Tienda de MLB",
+        "message":"Bienvenido a la API de  Vixel",
         "version": "1.0"
     }
     return JsonResponse(response)
 
+
+@api_view(['GET'])
+def search_users_safe(request):
+    query = request.GET.get('query','')
+
+    users = CustomUser.objects.filter(
+        Q(email__icontains=query) | Q(first_name__icontains=query)
+    ).values('id','email')
+
+    return Response({
+        'count': users.count(),
+        'result': list(users)
+    })
+
 class UsuarioAPIView(APIView):
-    permission_classes = [IsAuthenticatedOrReadOnly, IsAdminUser] 
+    permission_classes = [IsAuthenticated, IsAdminUser] 
     @swagger_auto_schema(
         operation_description="Obtener una lista de usuarios",
         responses={
@@ -72,7 +99,7 @@ class UsuarioAPIView(APIView):
         return Response(usuario_serializer.errors, status=400)
 
 class UsuarioDetalleAPIView(APIView):
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [IsAuthenticated]
     @swagger_auto_schema(
         operation_description="Obtener un usuario por ID",
         responses={
@@ -131,7 +158,7 @@ class UsuarioDetalleAPIView(APIView):
             return Response({"error": "No se puede eliminar el usuario porque tiene pedidos asociados"}, status=status.HTTP_400_BAD_REQUEST)
 
 class ProductoAPIView(APIView):
-    permission_classes = [IsAuthenticatedOrReadOnly,TienePermisoModelo]
+    permission_classes = [IsAuthenticated,TienePermisoModelo]
     @swagger_auto_schema(
         operation_description="Obtener una lista de productos",
         responses={
@@ -141,6 +168,7 @@ class ProductoAPIView(APIView):
         }
     )
     def get(self, request):
+        logger.info("Obteniendo la lista de productos")
         producto = Producto.objects.all()
         paginator =CustomPagination()
         paginated_queryset = paginator.paginate_queryset(producto, request)
@@ -162,7 +190,7 @@ class ProductoAPIView(APIView):
         return Response(producto_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 class ProductoDetalleAPIView(APIView):
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [IsAuthenticated]
     @swagger_auto_schema(
         operation_description="Obtener un producto por id",
         responses={
@@ -218,10 +246,10 @@ class ProductoDetalleAPIView(APIView):
         except Producto.DoesNotExist:
             return Response({"error": "Producto no encontrado"}, status=status.HTTP_404_NOT_FOUND)
         except RestrictedError:
-            return Response({"error": "No se puede eliminar el producto porque tiene pedidos asociados"}, sstatus=status.HTTP_400_BAD_REQUEST)
+            return Response({"error": "No se puede eliminar el producto porque tiene pedidos asociados"}, status=status.HTTP_400_BAD_REQUEST)
     
 class PedidoAPIView(APIView):
-    permission_classes = [IsAuthenticatedOrReadOnly, TienePermisoModelo]
+    permission_classes = [IsAuthenticated, TienePermisoModelo]
     @swagger_auto_schema(
         operation_description="Obtener una lista de pedidos",
         responses={
@@ -250,7 +278,7 @@ class PedidoAPIView(APIView):
         return Response(pedido_serializer.errors, status=400)
     
 class PedidoDetalleAPIView(APIView):
-    permission_classes = [IsAuthenticatedOrReadOnly,TienePermisoModelo]
+    permission_classes = [IsAuthenticated,TienePermisoModelo]
     @swagger_auto_schema(
         operation_description="Obtener un pedido por ID",
         responses={
@@ -286,7 +314,7 @@ class PedidoDetalleAPIView(APIView):
                     "usuario": pedido_serializer.data
                 }
                 return Response(respuesta,pedido_serializer.data)
-            return Response(pedido_serializer.errors, sstatus=status.HTTP_400_BAD_REQUEST)
+            return Response(pedido_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         except Pedido.DoesNotExist:
             return Response({"error": "Pedido no encontrado"}, status=status.HTTP_404_NOT_FOUND)
         
@@ -305,3 +333,22 @@ class PedidoDetalleAPIView(APIView):
             return Response(status=status.HTTP_204_NO_CONTENT)
         except Pedido.DoesNotExist:
             return Response({"error": "Pedido no encontrado"}, status=status.HTTP_404_NOT_FOUND)
+        
+
+class ProductoViewSet(ModelViewSet):
+    queryset = Producto.objects.all()
+    serializer_class = ProductoSerializer
+    permission_classes = [IsAuthenticated, TienePermisoModelo]
+    
+    def get_permissions(self):
+        if self.action in ['list', 'retrieve']:
+            self.permission_classes = [AllowAny]
+        else:
+            self.permission_classes = [IsAuthenticated, TienePermisoModelo]
+        return super().get_permissions()
+    
+    def get_queryset(self):
+        stock = self.request.query_params.get('stock', None)
+        if stock is not None:
+            return Producto.objects.filter(stock__gt=0)
+        return super().get_queryset()
