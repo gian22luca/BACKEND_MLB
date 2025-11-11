@@ -1,0 +1,61 @@
+services:
+  db_vixel: 
+    container_name: mysql_vixel_db
+    image: mysql:8.0
+
+
+    volumes:
+      - mysql_vixel_db:/var/lib/mysql
+    
+    ports:
+      - "3307:3306"
+
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+
+    restart: unless-stopped
+    networks:
+      - vixel-network
+  api:
+    container_name: api_vixel
+    build:
+      context: .
+      dockerfile: ./deployments/Dockerfile
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./src/.env
+
+    volumes:
+      - ./src:/app
+      - ./logs:/app/logs
+    
+    depends_on:
+      - db_vixel
+    
+    networks:
+      - vixel-network
+    
+    command: >
+      sh -c "
+        echo 'Esperando a que MySQL este listo...' &&
+        sleep 10 &&
+        echo 'Ejecutando migraciones...' &&
+        python manage.py migrate &&
+        echo 'Iniciando servidor django...' &&
+        python manage.py runserver 0.0.0.0:8000
+      "
+
+    
+    
+
+volumes:
+  mysql_vixel_db:
+
+networks:
+  vixel-network:
+    driver: bridge
+

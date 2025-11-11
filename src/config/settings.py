@@ -26,7 +26,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
-ENV = os.getenv('ENV', 'production')
+ENV = os.getenv( 'production',"development")
 ALLOWED_HOST = os.getenv('ALLOWED_HOSTS', '').split(',')
 
 CORS_ALLOWED_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS', '').split(',')
@@ -127,7 +127,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+STATICFILES_DIRS = [BASE_DIR / 'static']
+MEDIA_ROOT = BASE_DIR / 'media'
+STATIC_ROOT = BASE_DIR.parent / 'static_files'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
@@ -185,7 +189,7 @@ SWAGGER_SETTINGS = {
 
 
 #Indico directorio de logs
-LOG_DIR = BASE_DIR.parent / 'logs'
+LOG_DIR = BASE_DIR.parent / '/app/logs'
 #En caso de que no exista lo crea
 LOG_DIR.mkdir(exist_ok=True)
 
@@ -208,7 +212,6 @@ LOGGING = {
         },
         'file': {
             'class': 'logging.FileHandler', #guardar los logs en archivos
-            #'filename': os.path.join(BASE_DIR, 'aude_academy_debug.log'),  # guarda en un archivo
             'filename': LOG_DIR / 'vixel_debug.log',
             'formatter':'avanzado'
         },
@@ -238,5 +241,27 @@ LOGGING = {
         }
     },
 }
- 
 
+if ENV == 'production':
+    SECURE_SSL_REDIRECT=True
+    SESSION_COOKIE_SECURE=True
+    CSRF_COOKIE_SECURE=True
+
+#CONFIGURACION DE EMAIL
+
+#EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+#Se enviaria el correo por smtp
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+
+#Comentario de email por defecto
+DEFAULT_FROM_EMAIL = 'vixel.ventas@gmail.com'
+SERVER_EMAIL = 'vixel.ventas@gmail.com'
+
+# Si el backend es SMTP:
+EMAIL_HOST = os.environ.get("EMAIL_HOST")
+EMAIL_PORT = int(os.environ.get("EMAIL_PORT", "587"))
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
+EMAIL_USE_TLS = os.environ.get("EMAIL_USE_TLS", "1") == "1"
+EMAIL_USE_SSL = os.environ.get("EMAIL_USE_SSL", "0") == "1"
+EMAIL_TIMEOUT = int(os.environ.get("EMAIL_TIMEOUT", "10"))  

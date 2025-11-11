@@ -20,6 +20,7 @@ class Producto(models.Model):
     precio = models.DecimalField(max_digits=10, decimal_places=2)
     stock = models.IntegerField()
     id_producto = models.AutoField(primary_key=True, unique=True)
+    #archivo = models.FileField(upload_to='archivos/', null=True, blank=True)
     
     
     

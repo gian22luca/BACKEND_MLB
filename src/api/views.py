@@ -23,6 +23,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 from .serializers import CustomTokenObtainPairSerializer, ProductoSerializer
 from rest_framework.viewsets import ModelViewSet
 import logging
+from django.core.mail import send_mail
 
 logger = logging.getLogger('api_vixel')
 
@@ -43,6 +44,14 @@ def api_info(request):
     """
         Información general de la API de Vixel.
     """
+    """send_mail(
+        subject="Acceso a la API de Vixel",
+        message="Se ha accedido a la vista de información de la API.",
+        from_email="vixel.ventas@gmail.com",
+        recipient_list=["test@test.com"],
+        fail_silently=False                
+                        
+    )"""
     response = {
         "message":"Bienvenido a la API de  Vixel",
         "version": "1.0"
